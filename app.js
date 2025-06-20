@@ -267,5 +267,9 @@ function editTask(e) {
 
   btnEnviar.setAttribute("data-id", id);
   isEditing = true;
- 
 }
+const hamburger =document.querySelector(".fa-bars");
+const menuLateral = document.querySelector(".cuerpo");
+  hamburger.addEventListener("click", ()=>{
+    menuLateral.classList.toggle("show-menu")
+  })
