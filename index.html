@@ -4,8 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1>Hola mundo</h1>
+    <div class="head">
+        <h1 class="title">Gestor de tareas  <i class="fa-solid fa-map-pin pin"></i></h1> 
+        <div class="cardTask"></div> <!-- Pizarra donde van los post its -->
+    </div>
+    
+    <div class="cuerpo">
+       <form action="" class="formAnnadir">
+            <input type="text" placeholder="Título" name="titulo" id="title-task">
+            <textarea placeholder="Descripción" maxlength="50" name="descripcion" rows="3" id="description-task" ></textarea>
+            <input type="date" name="fecha" id="date-task">
+            <select id="priority-task" name="priority-task" class="priorityForm">
+                <option value="">Seleccionar prioridad</option>
+                <option value="Baja">Baja</option>
+                <option value="Media">Media</option>
+                <option value="Alta">Alta</option>
+            </select>
+            <button type="submit" class="btnEnviar">Agregar </button>
+        </form>
+        <div class="color green">
+            Prioridad Baja
+            <div class="circular" style="background-color: green;"></div>
+        </div>
+        <div class="color yellow">
+            Prioridad Media
+            <div class="circular" style="background-color: rgb(255, 230, 0);"></div>
+        </div>
+        <div class="color red">
+            Prioridad Alta
+            <div class="circular" style="background-color: rgb(219, 2, 2);"></div>
+        </div>
+        <div class="color purple">
+            Tarea finalizada
+            <div class="circular" style="background-color: rgb(75, 0, 173);"></div>
+        </div>
+        <div class="color gray">
+            Tarea caducada
+            <div class="circular" style="background-color: gray;"></div>
+        </div>
+    </div>
+
+    <dialog id="customDialogConfirm" class="emergentes">
+        <i id="close-button-confirm" class="fa-solid fa-xmark"></i>
+        <p>¿Estás seguro de que quieres borrar la tarea?</p>
+    
+        <div class="button">
+            <button id="accept">Aceptar</button>
+            <button id="cancel">Cancelar</button>
+        </div> 
+    </dialog>
+
+    <div id="toast-container"></div>
+    <script src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+:root{
+--color-red:#ff8c5f;
+--color-yellow:#ffda7d;
+--color-green:#acdeaa;
+--color-purple:#c1c8e3;
+--color-pink:#fad7dc;
+--color-secondary:#b63969;
+}
+/* ---CONFIG PÁGINA--- */
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+background-image: url(image-from-rawpixel-id-16921471-jpeg.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+font-family: "Space Grotesk", sans-serif;
+display: flex;
+color: rgb(34, 33, 33);
+}
+.head{
+width: 83%;
+padding: 10px;
+}
+.cuerpo{
+padding: 10px;
+width: 17%;
+height: 100vh;
+}
+/* ---TITULO--- */
+.title{
+box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+border-radius: 10px;
+background-color: white;
+width: 400px;
+padding: 10px 0;
+text-align: center;
+margin-bottom: 20px;
+}
+/* ---PIZARRA DONDE VA LOS POST-ITS--- */
+.cardTask{
+background-color: #f7f4f4;
+border: 5px solid rgb(255, 255, 255);
+box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+min-height: 800px;
+border-radius: 10px;
+padding: 10px;
+display: grid;
+grid-template-columns: repeat(6, 1fr);
+}
+/* ---POST-IT CON LAS INFORMACIONES */
+.container {
+background-color:var(--color-pink);
+box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;position: relative; 
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+margin: 10px;
+width: 210px;
+height: 210px;
+padding: 5px 10px;
+transition: .3s;
+
+}
+/* ---ROTACIÓN--- */
+.container:nth-child(2n+2) {
+transform: rotate(4deg);
+}
+.container:nth-child(3n+2) {
+transform: rotate(3deg);
+}
+.container:nth-child(4n+2) {
+transform: rotate(-3deg);
+}
+.container:nth-child(5n+2) {
+transform: rotate(2deg);
+}
+/* ---HOVER CONTAINER--- */
+.container:hover{
+transform: scale(1.1);
+}
+
+/* ---IMAGEN PIN--- */
+.container .pin {
+position: absolute;
+top: 5px;
+right: 5px;
+font-size: 25px;
+transform: rotate(20deg);
+
+}
+/* ---MARGIN FECHA--- */
+p.fecha{
+margin-top: 10px;
+margin-bottom: 5px;
+}
+div.buttons{
+display: flex;
+justify-content: right;
+gap: 10px;
+border-top: 1px solid black;
+padding-top: 5px;
+}
+div.buttons button{
+background-color: transparent;
+border: none;
+font-weight: 500;
+font-size: 15px;
+transition: .2s;
+}
+div.buttons button:hover{
+transform: scale(1.2);
+cursor: pointer; 
+}
+/* ---P QUE CONTINE EL TEXT AREA--- */
+p.description{
+overflow-wrap: break-word; /* alternativa moderna */
+white-space: normal; /* asegura que el texto puede hacer saltos de línea */
+max-width: 100%;
+
+height: 100px;
+}
+.container-priority{
+border-top:1px solid rgb(2, 2, 2);
+}
+.btn-complete i{
+font-size: 20px;
+}
+
+/* ---FORMULARIO--- */
+.formAnnadir {
+display: flex;
+flex-direction: column;
+gap: 10px;
+margin: auto;
+margin-top: 80px;
+margin-bottom: 40px;
+background-color:white;
+padding: 15px;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+border-radius: 6px;
+}
+input, textarea{
+padding: 8px;
+font-size: 1rem;
+border: 1px solid #aaa;
+outline: none;
+}
+.formAnnadir button {
+padding: 10px;
+font-size: 1rem;
+background-color:var(--color-pink);
+border: none;
+cursor: pointer;
+transition: .2s;
+font-weight: 600;
+border-radius: 10px;
+}
+.formAnnadir button:hover {
+background-color:var(--color-secondary);
+transform: scale(1.05);
+color: white;
+}
+select{
+padding: 10px;
+font-size: 1rem;
+background-color:white;
+border: 1px solid #aaa;
+cursor: pointer;
+transition: .2s;
+}
+/* ---Dialog--- */
+dialog{
+    border: none;
+    margin: 200px auto;
+    background-color: rgb(102, 101, 101);
+    border-radius:10px ;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    flex-direction: column;
+}
+dialog::backdrop{
+    background-color: rgba(0, 0, 0, 0.425);
+}
+
+#accept, #cancel{
+    background-color: green;
+    color: white;
+    align-items: center;
+    font-weight: 600;
+    transition: .2s;
+    width: 75%;
+    padding: 9px;
+    border: none;
+    margin: 5px;  
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+#cancel{
+    background-color: rgb(204, 33, 33);
+}
+#accept:hover, #cancel:hover{
+    cursor: pointer;
+    scale: .89;
+    box-shadow: none;
+}
+.button{
+    display: flex;
+    margin-top: 20px;
+}
+.emergentes i{
+    text-align: right;
+    margin-bottom: 20px;
+    transition: .2s;
+    font-size: 20px;
+}
+.emergentes i:hover{
+    cursor: pointer;
+    font-size: 22px;
+}
+.color{
+    border-radius: 7px;
+    width: 80%;
+    margin:10px 0;
+    margin-left: auto;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.circular{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-left: auto;
+}
+.green{
+    background-color: var(--color-green);
+}
+.yellow{
+    background-color: var(--color-yellow);
+}
+.red{
+    background-color: var(--color-red);
+}
+.purple{
+    background-color: var(--color-purple);
+}
+.gray{
+    background-color: #ccc;
+}
+#toast-container {
+    position: absolute;
+    bottom: 50px;
+    right: 1rem;
+    z-index: 9999;
+  }
+
+.toast {
+color: #333;
+border-left:7px solid #e22424;
+background-color:#f7f4f4;
+padding: 1rem;
+font-weight: 600;
+margin-bottom: 0.5rem;
+border-top-left-radius: 8px;
+border-bottom-left-radius: 8px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+max-width: 270px;
+opacity: 1;
+transform: translateX(0);
+animation: slideIn 0.5s ease forwards;
+
+}
+
+@keyframes slideIn {
+from {
+    opacity: 0;
+    transform: translateX(100%);
+}
+to {
+    opacity: 1;
+    transform: translateX(0);
+}
+}
+
+@keyframes slideOut {
+from {
+    opacity: 1;
+    transform: translateX(0);
+}
+to {
+    opacity: 0;
+    transform: translateX(100%);
+}
+}
+.toast-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: rgb(226, 36, 36);
+    width: 100%;
+    transform-origin: right;
+    animation: shrink 5s linear forwards;
+  }
+  
+  @keyframes shrink {
+    from { width: 100%; }
+    to { width: 0%; }
+  }
